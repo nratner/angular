@@ -1,0 +1,38 @@
+<h1>Search Results</h1>
+<div ng-if="list.isEmpty()">Nothing found</div>
+<!-- <scrollable-table> -->
+  <div class="table-responsive" ng-hide="list.isEmpty()">
+    <table class=" table table-bordred table-striped table-hover">
+      <tr>
+        <th style="font-weight: bold;"><div>Menu Item</div></th>
+        <th style="font-weight: bold;"><div>Short Name</div></th>
+        <th style="font-weight: bold;"><div>Description</div></th>
+        <th style="font-weight: bold;"><div>Click Here to Remove</div></th>
+      </tr>
+      <tbody>
+        <tr ng-repeat="item in list.found" class="pointer">
+          <td><div>{{item.name}}</div></td>
+          <td><div>{{item.short_name}}</div></td>
+          <td><div>{{item.description}}</div></td>
+          <td><div ng-click="list.onRemove({index: $index});">Don't want this one!</div></td>
+        </tr>
+      </tbody>
+    </table>
+  <!-- </scrollable-table> -->
+  </div>
+
+
+<!-- <table>
+  <tr>
+    <th style="font-weight: bold;">Menu Item</th>
+    <th style="font-weight: bold;">Short Name</th>
+    <th style="font-weight: bold;">Description</th>
+    <th>Select to Remove</th>
+  </tr>
+  <tr ng-repeat="item in list.found">
+      <td>{{item.name}}</td>
+      <td>{{item.short_name}}</td>
+      <td>{{item.description}}</td>
+      <td><button ng-click="list.onRemove({index: $index});">Don't want this one!</button></td>
+  </tr> -->
+<!-- </table> -->
