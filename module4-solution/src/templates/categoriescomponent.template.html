@@ -1,0 +1,9 @@
+<a ui-sref="home">Home</a> &lt; <span ui-sref="categories">Categories</span>
+
+<h3>Menu Categories</h3>
+<ul>
+  <li ng-repeat="item in $ctrl.items">
+    <a>{{item.name}}</a>
+    <button ui-sref="items({category: item.short_name})">Select for Menu Items</button>
+  </li>
+</ul>
