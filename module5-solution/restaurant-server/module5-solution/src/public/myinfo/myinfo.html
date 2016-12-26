@@ -1,0 +1,23 @@
+<div class="container">
+  <h2 class="text-center">My Info</h2>
+
+  <div ng-if="!myInfoCtrl.info">You are not signed up for our monthly newsletter.</div>
+  <h3><a ng-if="!myInfoCtrl.info" ui-sref="public.signup">Sign up Now!</a></h3>
+  <div ng-if="myInfoCtrl.info">
+    <div>
+    First name: {{myInfoCtrl.info.firstName}} <br />
+    Last name: {{myInfoCtrl.info.lastName}} <br />
+    Email address: {{myInfoCtrl.info.email}} <br />
+    Phone number: {{myInfoCtrl.info.phone}} <br />
+  </div>
+  <div>
+    <h2 class="text-center">Favorite</h2>
+  <menu-item
+             menu-item="myInfoCtrl.menuItem">
+  </menu-item>
+</div>
+  </div>
+
+</div>
+<div class="text-center" ng-if="myInfoCtrl.info">You are currently signed up for our newsletter. <br />
+  <h3>Thank You for being a Patron!</h3></div>
